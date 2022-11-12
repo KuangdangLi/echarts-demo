@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>这里是app</div>
-    <VueEcharts :option="option" :isLoading="isLoading"></VueEcharts>
+    <VueEcharts :option="option()" :isLoading="isLoading"></VueEcharts>
     <button @click="loadMore">新增标签</button>
   </div>
 </template>
@@ -15,76 +15,78 @@ export default {
     return {
       xData : ['10-10', '10-11', '10-12', '10-13', '10-14', '10-15'],
       sData:[1, 2, 2, 4, 0, 1],
-      // option: {
-      //   title: {
-      //     text: '一些demo',
-      //   }
-      //   ,
-      //   tooltip: {
-      //     show: true,
-      //   }
-      //   ,
-      //   legend: {
-      //     data: ['打胶次数'],
-      //   }
-      //   ,
-      //   xAxis: {
-      //     data: this.xData,
-      //   }
-      //   ,
-      //   yAxis: {}
-      //   ,
-      //   series: [
-      //     {
-      //       name: '打胶次数',
-      //       type: 'line',
-      //       data: this.sData
-      //     }
-      //   ],
-      // },
-      isLoading: false,
-      a:1,
-      b:2,
-      c:3,
-      arr: [this.a,this.b,this.c]
-    }
-  },
-  computed:{
-    option(){
-      return {
-        title: {
-          text: '一些demo',
-        }
-        ,
-        tooltip: {
-          show: true,
-        }
-        ,
-        legend: {
-          data: ['打胶次数'],
-        }
-        ,
-        xAxis: {
-          data: this.xData,
-        }
-        ,
-        yAxis: {}
-        ,
-        series: [
-          {
-            name: '打胶次数',
-            type: 'line',
-            data: this.sData
+      option:function () {
+        return {
+          title: {
+            text: '一些demo',
           }
-        ],
-      }
+        ,
+          tooltip: {
+            show: true,
+          }
+        ,
+          legend: {
+            data: ['打胶次数'],
+          }
+        ,
+          xAxis: {
+            data: this.xData,
+          }
+        ,
+          yAxis: {}
+        ,
+          series: [
+            {
+              name: '打胶次数',
+              type: 'line',
+              data: this.sData
+            }
+          ],
+        }
+      },
+      isLoading: false,
+      // a:1,
+      // b:2,
+      // c:3,
+      // arr: [this.a,this.b,this.c]
     }
   },
+  // computed:{
+  //   option(){
+  //     return {
+  //       title: {
+  //         text: '一些demo',
+  //       }
+  //       ,
+  //       tooltip: {
+  //         show: true,
+  //       }
+  //       ,
+  //       legend: {
+  //         data: ['打胶次数'],
+  //       }
+  //       ,
+  //       xAxis: {
+  //         data: this.xData,
+  //       }
+  //       ,
+  //       yAxis: {}
+  //       ,
+  //       series: [
+  //         {
+  //           name: '打胶次数',
+  //           type: 'line',
+  //           data: this.sData
+  //         }
+  //       ],
+  //     }
+  //   }
+  // },
   created() {
-    console.log(this.a);
-    console.log(this.b);
-    console.log(this.c);
-    console.log(this.arr);
+    // console.log(this.a);
+    // console.log(this.b);
+    // console.log(this.c);
+    // console.log(this.arr);
   },
   methods: {
     loadMore() {
