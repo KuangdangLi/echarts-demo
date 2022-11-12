@@ -1,8 +1,13 @@
 {
   "dependencies": {
-    "echarts": "4.7.0"
+    "echarts": "4.7.0",
+    "vue": "2.7.14",
+    "vue-hot-reload-api": "^2.3.4"
   },
   "devDependencies": {
-    "@types/echarts": "^4.9.16"
+    "@types/echarts": "^4.9.16",
+    "@types/vue": "^2.0.0",
+    "@vue/component-compiler-utils": "^3.3.0",
+    "vue-template-compiler": "^2.7.14"
   }
 }
