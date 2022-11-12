@@ -4,7 +4,7 @@ const button = document.getElementsByTagName('button')[0]
 const width = document.documentElement.clientWidth
 console.log(width);
 main.style.width=`${width- 20}px`
-main.style.height=`${(width-20)*1.2}px`
+main.style.height=`${(width-20)*0.5}px`
 // 基于准备好的dom，初始化echarts实例
 let myChart = echarts.init(main,'light');
 
@@ -27,24 +27,45 @@ function addS(){
 
 // 使用刚指定的配置项和数据显示图表。
 myChart.setOption({
+baseOption:{
   title: {
     text: '一些demo'
-  },
+  }
+,
   tooltip: {
     show: true
-  },
+  }
+,
   legend: {
     data: ['打胶次数']
-  },
+  }
+,
   xAxis: {
     data:xData
-  },
-  yAxis: {},
+  }
+,
+  yAxis: {}
+,
   series: [
     {
       name: '打胶次数',
       type: 'line',
       data: sData
+    }
+  ]
+},
+  media:[
+    {
+      query:{
+        maxWidth:500
+      },
+      option:{
+        series:[{
+          itemStyle:{
+            borderWidth:30
+          }
+        }]
+      }
     }
   ]
 });
