@@ -1,6 +1,10 @@
 import echarts from "echarts"
 const main = document.getElementById('main')
 const button = document.getElementsByTagName('button')[0]
+const width = document.documentElement.clientWidth
+console.log(width);
+main.style.width=`${width- 20}px`
+main.style.height=`${(width-20)*1.2}px`
 // 基于准备好的dom，初始化echarts实例
 let myChart = echarts.init(main,'light');
 
